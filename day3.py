@@ -84,13 +84,17 @@ def test_diagnostics():
     life_rating_support = calculate_life_rating_support(test_diagnostic_report)
     assert life_rating_support == 230, 'should be 230'
 
-f = open('day3_input.txt', 'r')
-diagnostic_report = f.readlines()
+def main():
+    f = open('day3_input.txt', 'r')
+    diagnostic_report = f.readlines()
 
-# part 1
-result = calculate_power_consumption(diagnostic_report)
-print(f'Result for part 1 is {result}')
+    # part 1
+    result = calculate_power_consumption(diagnostic_report)
+    print(f'Result for part 1 is {result}')
 
-# part 2
-result = calculate_life_rating_support(diagnostic_report)
-print(f'Result for part 2 is {result}')
+    # part 2
+    result = calculate_life_rating_support(diagnostic_report)
+    print(f'Result for part 2 is {result}')
+
+if __name__ == "__main__":
+    main()

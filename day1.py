@@ -34,13 +34,17 @@ def test_calculation():
     assert calculate_depth_increase(test_measurements) == 7, 'Should be 7'
     assert calculate_depth_increase_with_sliding_window(test_measurements, 3) == 5, 'Should be 5'
 
-file = open("day1_input.txt", "r")
-measurements = file.readlines()
+def main():
+    file = open("day1_input.txt", "r")
+    measurements = file.readlines()
 
-# part 1
-result = calculate_depth_increase(measurements)
-print(f'Result for part 1 is {result}')
+    # part 1
+    result = calculate_depth_increase(measurements)
+    print(f'Result for part 1 is {result}')
 
-# part 2
-result = calculate_depth_increase_with_sliding_window(measurements, 3)
-print(f'Result for part 2 is {result}')
+    # part 2
+    result = calculate_depth_increase_with_sliding_window(measurements, 3)
+    print(f'Result for part 2 is {result}')
+
+if __name__ == "__main__":
+    main()

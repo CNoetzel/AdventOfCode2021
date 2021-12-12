@@ -77,7 +77,7 @@ def play_bingo(bingo_data, play_type):
     return board_scores[last_winner]
 
 # tests
-def test_diagnostics():
+def test_bingo():
     f = open('day4_test_input.txt', 'r')
     test_bingo_data = f.readlines()
 
@@ -89,16 +89,20 @@ def test_diagnostics():
     score = play_bingo(prepared_data_last_win, Type.LAST_WIN)
     assert score == 1924, 'should be 1924'
 
-f = open('day4_input.txt', 'r')
-bingo_data = f.readlines()
-prepared_data = prepare_data(bingo_data)
+def main():
+    f = open('day4_input.txt', 'r')
+    bingo_data = f.readlines()
+    prepared_data = prepare_data(bingo_data)
 
-# part 1
-prepared_data_first_win = prepare_data(bingo_data)
-score_first_win = play_bingo(prepared_data_first_win, Type.FIRST_WIN)
-print(f'Result for part 1 is {score_first_win}')
+    # part 1
+    prepared_data_first_win = prepare_data(bingo_data)
+    score_first_win = play_bingo(prepared_data_first_win, Type.FIRST_WIN)
+    print(f'Result for part 1 is {score_first_win}')
 
-# part 2
-prepared_data_last_win = prepare_data(bingo_data)
-score_last_win = play_bingo(prepared_data_last_win, Type.LAST_WIN)
-print(f'Result for part 2 is {score_last_win}')
+    # part 2
+    prepared_data_last_win = prepare_data(bingo_data)
+    score_last_win = play_bingo(prepared_data_last_win, Type.LAST_WIN)
+    print(f'Result for part 2 is {score_last_win}')
+
+if __name__ == "__main__":
+    main()

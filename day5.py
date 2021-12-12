@@ -77,13 +77,17 @@ def test_overlapping_analytics():
     overlaps_conplex = get_overlapping_lines(test_vent_data, 2, True)
     assert overlaps_conplex == 12, 'should be 12'
 
-f = open('day5_input.txt', 'r')
-vent_data = f.readlines()
+def main():
+    f = open('day5_input.txt', 'r')
+    vent_data = f.readlines()
 
-# part 1
-overlaps_part_1 = get_overlapping_lines(vent_data, 2, False)
-print(f'Result for part 1 is {overlaps_part_1}')
+    # part 1
+    overlaps_part_1 = get_overlapping_lines(vent_data, 2, False)
+    print(f'Result for part 1 is {overlaps_part_1}')
 
-# part 2
-overlaps_part_2 = get_overlapping_lines(vent_data, 2, True)
-print(f'Result for part 2 is {overlaps_part_2}')
+    # part 2
+    overlaps_part_2 = get_overlapping_lines(vent_data, 2, True)
+    print(f'Result for part 2 is {overlaps_part_2}')
+
+if __name__ == "__main__":
+    main()

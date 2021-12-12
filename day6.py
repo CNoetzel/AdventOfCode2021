@@ -54,15 +54,19 @@ def test_fish_reproduction():
     amount_of_immortal_fishs = calculate_amount_of_fishs_optimized(rep_list, 256)
     assert amount_of_immortal_fishs == 26984457539, 'should be 26984457539'
 
-f = open('day6_input.txt', 'r')
-lines = f.readlines()
-fish_data = list(map(int,lines[0].strip().split(',')))
+def main():
+    f = open('day6_input.txt', 'r')
+    lines = f.readlines()
+    fish_data = list(map(int,lines[0].strip().split(',')))
 
-# part 1
-amount_of_fishs = calculate_amount_of_fishs_simple(fish_data, 80)
-print(f'Result for part 1 is {amount_of_fishs}')
+    # part 1
+    amount_of_fishs = calculate_amount_of_fishs_simple(fish_data, 80)
+    print(f'Result for part 1 is {amount_of_fishs}')
 
-# part 2
-reproduction_list = init_fish_reproduction_list(fish_data)
-amount_of_fishs = calculate_amount_of_fishs_optimized(reproduction_list, 256)
-print(f'Result for part 2 is {amount_of_fishs}')
+    # part 2
+    reproduction_list = init_fish_reproduction_list(fish_data)
+    amount_of_fishs = calculate_amount_of_fishs_optimized(reproduction_list, 256)
+    print(f'Result for part 2 is {amount_of_fishs}')
+
+if __name__ == "__main__":
+    main()

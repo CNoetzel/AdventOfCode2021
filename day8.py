@@ -147,13 +147,17 @@ def test_display():
     sum_of_output = get_sum_of_output(lines)
     assert sum_of_output == 61229, 'should be 61229'
 
-f = open('day8_input.txt', 'r')
-lines = f.readlines()
+def main():
+    f = open('day8_input.txt', 'r')
+    lines = f.readlines()
 
-# part 1
-unique_numbers = get_unique_numbers(lines)
-print(f'Result for part 1 is {unique_numbers}')
+    # part 1
+    unique_numbers = get_unique_numbers(lines)
+    print(f'Result for part 1 is {unique_numbers}')
 
-# part 2
-sum_of_output = get_sum_of_output(lines)
-print(f'Result for part 2 is {sum_of_output}')
+    # part 2
+    sum_of_output = get_sum_of_output(lines)
+    print(f'Result for part 2 is {sum_of_output}')
+
+if __name__ == "__main__":
+    main()

@@ -56,14 +56,18 @@ def test_crab_movement():
     minmum_spent_fuel = calculate_minimum_spent_fuel_increasing(test_crab_data)
     assert minmum_spent_fuel == 168, 'should be 168'
 
-f = open('day7_input.txt', 'r')
-lines = f.readlines()
-crab_data = list(map(int,lines[0].strip().split(',')))
+def main():
+    f = open('day7_input.txt', 'r')
+    lines = f.readlines()
+    crab_data = list(map(int,lines[0].strip().split(',')))
 
-# part 1
-minmum_spent_fuel = calculate_minimum_spent_fuel_constant(crab_data)
-print(f'Result for part 1 is {minmum_spent_fuel}')
+    # part 1
+    minmum_spent_fuel = calculate_minimum_spent_fuel_constant(crab_data)
+    print(f'Result for part 1 is {minmum_spent_fuel}')
 
-# part 2
-minmum_spent_fuel = calculate_minimum_spent_fuel_increasing(crab_data)
-print(f'Result for part 2 is {minmum_spent_fuel}')
+    # part 2
+    minmum_spent_fuel = calculate_minimum_spent_fuel_increasing(crab_data)
+    print(f'Result for part 2 is {minmum_spent_fuel}')
+
+if __name__ == "__main__":
+    main()

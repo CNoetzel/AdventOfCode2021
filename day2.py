@@ -40,15 +40,19 @@ def test_navigation():
     position = navigate_with_aim(test_commands)
     assert position['horizontal'] * position['depth'] == 900, 'should be 90'
 
-f = open('day2_input.txt', 'r')
-commands = f.readlines()
+def main():
+    f = open('day2_input.txt', 'r')
+    commands = f.readlines()
 
-# part 1
-position = navigate(commands)
-result = position['horizontal'] * position['depth']
-print(f'Result for part 1 is {result}')
+    # part 1
+    position = navigate(commands)
+    result = position['horizontal'] * position['depth']
+    print(f'Result for part 1 is {result}')
 
-# part 2
-position = navigate_with_aim(commands)
-result = position['horizontal'] * position['depth']
-print(f'Result for part 2 is {result}')
+    # part 2
+    position = navigate_with_aim(commands)
+    result = position['horizontal'] * position['depth']
+    print(f'Result for part 2 is {result}')
+
+if __name__ == "__main__":
+    main()

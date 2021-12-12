@@ -130,7 +130,7 @@ def get_multiplied_basin_size(heightmap: list, number_of_basins_to_multiply: int
     return value
 
 # tests
-def test_display():
+def test_basin_analytics():
     f = open('day9_test_input.txt', 'r')
     lines = f.readlines()
 
@@ -141,14 +141,18 @@ def test_display():
     basin_size = get_multiplied_basin_size(heightmap, 3)
     assert basin_size == 1134, 'should be 1134'
 
-f = open('day9_input.txt', 'r')
-lines = f.readlines()
-heightmap = prepare_data(lines)
+def main():
+    f = open('day9_input.txt', 'r')
+    lines = f.readlines()
+    heightmap = prepare_data(lines)
 
-# part 1
-risk_level = get_risk_level(heightmap)
-print(f'Result for part 1 is {risk_level}')
+    # part 1
+    risk_level = get_risk_level(heightmap)
+    print(f'Result for part 1 is {risk_level}')
 
-# part 2
-basin_size = get_multiplied_basin_size(heightmap, 3)
-print(f'Result for part 2 is {basin_size}')
+    # part 2
+    basin_size = get_multiplied_basin_size(heightmap, 3)
+    print(f'Result for part 2 is {basin_size}')
+
+if __name__ == "__main__":
+    main()
